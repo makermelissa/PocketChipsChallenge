@@ -1,18 +1,12 @@
 # Pocket Chip's Challenge Public Alpha
 
 Pocket Chip's Challenge is a freeware port of Microsoft's Chip's Challenge for the PocketPC. Now people can play a classic favorite wherever they go.  Chip's Challenge is a very addictive puzzle game featuring Chip in a maze of traps and monsters.
-
-I have included the following files: 
-* Chips.exe (The main program) 
-* GD104.dll (The GAPIDraw Library)
-
 This is a fully playable version and will start at level 1. Being an alpha release, not all features have been implemented.  The only items on the title screen that work, are the "Play Game" and "Exit" options.  There is no sound implemented yet.  Unfortunately, if you get stuck, you will either need to let time run out, or exit the game and start from the beginning.
 
 ## Overview
 
 Chip is willing to do anything for Melinda the Mental Marvel, more than anything, because he wants to join Melinda's exclusive computer club, the Bit Busters. Finally Melinda has offered him membership, but on one condition! Chip must find his way from one end of Melinda's magical clubhouse to the other, picking up cosmic computer chips along the 
-way.
-If that sounds easy, then you've never been to Melinda's magical clubhouse. It's awesome inside, but tricky, and a little scary too. There are teleports, invisible walls, force floors, water traps, locked doors, and plenty of monsters. There's magic, mystery, and behind the scenes there is Melinda, keeping score on your progress and providing helpful hints. 
+way. If that sounds easy, then you've never been to Melinda's magical clubhouse. It's awesome inside, but tricky, and a little scary too. There are teleports, invisible walls, force floors, water traps, locked doors, and plenty of monsters. There's magic, mystery, and behind the scenes there is Melinda, keeping score on your progress and providing helpful hints. 
 As you succeed in helping Chip move through each level of the clubhouse, Melinda gives you a secret password that allows you to return. And Melinda rewards perseverance. If she thinks Chip has tried long enough and hard enough on a level, she'll let him sneak through to the next level. But it takes a lot of perseverance to impress her. 
 How big is the clubhouse? 144 levels is the rumor. But some claim that Melinda is still building. In any case, it defies dimensions so don't get lost. 
 
@@ -52,7 +46,7 @@ documentation, and you should have little trouble learning how to use it.
 
 ## License
 
-Copyright for [this repository](https://github.com/melissagirl/PocketChipsChallenge) is held by Melissa LeBlanc-Williams, 2003-2017.
+Copyright for [Pocket Chips Challenge](https://github.com/melissagirl/PocketChipsChallenge) is held by Melissa LeBlanc-Williams, 2003-2017.
 See the [LICENSE](LICENSE) file for license rights and limitations (MIT).
 
 ## Disclaimer
