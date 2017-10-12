@@ -1,0 +1,140 @@
+HRESULT CChipsApp::KeyDown(DWORD dwKey, GDKEYLIST& keylist)
+{
+	SetKeyState(dwKey, KS_ON);
+
+	m_GameState.IncButtons();
+	KeyProcCalled = FALSE;
+	if((m_GameState.GetGameMode() == GM_NORMAL) 
+		|| (m_GameState.GetGameMode() == GM_FROZEN))
+	{
+		if((m_GameState.GetGameMode() == GM_FROZEN) && (m_GameState.GetCurrentLevel()->GetNoLimit() == FALSE))
+		{
+			m_GameState.GetCurrentLevel()->SetTime(m_GameState.GetCurrentLevel()->GetTime() - 1);
+			SetTimer(GetForegroundWindow(), LEVEL_TIMER, 1000, (TIMERPROC)LevelTimerProc);
+		}
+		if(dwKey == keylist.vkLeft)
+		{
+			//m_GameState.MoveChip(LEFT);
+			m_GameState.SetButton(LEFT);
+		}
+		else if(dwKey == keylist.vkRight)
+		{
+			//m_GameState.MoveChip(RIGHT);
+			m_GameState.SetButton(RIGHT);
+		}
+		else if(dwKey == keylist.vkDown)
+		{
+			//m_GameState.MoveChip(DOWN);
+			m_GameState.SetButton(DOWN);
+		}
+		else if(dwKey == keylist.vkUp)
+		{
+			//m_GameState.MoveChip(UP);
+			m_GameState.SetButton(UP);
+		}
+		if((dwKey == keylist.vkLeft) || 
+		(dwKey == keylist.vkRight) || 
+		(dwKey == keylist.vkDown) || 
+		(dwKey == keylist.vkUp))
+		{
+			if(m_GameState.GetGameMode() == GM_FROZEN)
+				m_GameState.SetGameMode(GM_NORMAL);
+			//if(m_GameState.GetButtons() == 1)
+				//SetTimer(GetForegroundWindow(), KEY_TIMER, 200, (TIMERPROC)KeyTimerProc);
+		}
+
+	}
+	else if(m_GameState.GetGameMode() == GM_CHIPDEAD)
+	{
+		m_GameState.Reset();
+		m_GameState.SetLevel(m_GameState.GetCurrentLevel()->GetLevel());
+	}
+
+    return S_OK;
+}
+
+void CALLBACK KeyTimerProc(HWND hWnd, UINT uMsg, UINT idEvent, DWORD dwTime)
+{
+	//GDKEYLIST keylist;
+	//pChipsApp->GetInput()->GetKeyList(&keylist);
+
+	//if(pChipsApp->GetGameState()->GetButtons() > 0)
+	//{
+	//	if(pChipsApp->GetGameState()->GetGameMode() == GM_NORMAL)
+	//		pChipsApp->GetGameState()->MoveChip(pChipsApp->GetGameState()->GetButton());
+	//}
+}
+
+
+void CChipsApp::ResetButtons()
+{
+	int i;
+	for(i=0;i<256;i++)
+		KeyStates[i] = KS_OFF;
+	//m_GameState.ResetButtons();
+}
+
+void CChipsApp::SetKeyState(DWORD dwKey, int nState)
+{
+	GDKEYLIST keylist;
+	pChipsApp->GetInput()->GetKeyList(&keylist);
+	if((dwKey == keylist.vkA)
+		|| (dwKey == keylist.vkB)
+		|| (dwKey == keylist.vkC)
+		|| (dwKey == keylist.vkStart))
+	{
+		KeyStates[dwKey] = nState;
+	}
+	else
+	{
+		if(nState == KS_ON)
+			KeyStates[dwKey] = KeyStates[dwKey] == KS_OFF ? KS_PRESSED : KS_REPEATING;
+		else
+			KeyStates[dwKey] = KeyStates[dwKey] == KS_PRESSED ? KS_STRUCK : KS_OFF;
+	}
+}
+
+HRESULT CChipsApp::KeyUp(DWORD dwKey, GDKEYLIST& keylist)
+{
+
+	SetKeyState(dwKey, KS_OFF);
+
+	m_GameState.DecButtons();
+	if(m_GameState.GetGameMode() == GM_NORMAL && KeyProcCalled == FALSE)
+	{
+		if(dwKey == keylist.vkLeft)
+		{
+			m_GameState.MoveChip(LEFT);
+			m_GameState.SetButton(LEFT);
+		}
+		else if(dwKey == keylist.vkRight)
+		{
+			m_GameState.MoveChip(RIGHT);
+			m_GameState.SetButton(RIGHT);
+		}
+		else if(dwKey == keylist.vkDown)
+		{
+			m_GameState.MoveChip(DOWN);
+			m_GameState.SetButton(DOWN);
+		}
+		else if(dwKey == keylist.vkUp)
+		{
+			m_GameState.MoveChip(UP);
+			m_GameState.SetButton(UP);
+		}
+	}
+	/*if(((m_GameState.GetButton() == UP) && (dwKey == keylist.vkUp))
+		|| ((m_GameState.GetButton() == DOWN) && (dwKey == keylist.vkDown))
+		|| ((m_GameState.GetButton() == LEFT) && (dwKey == keylist.vkLeft))
+		|| ((m_GameState.GetButton() == RIGHT) && (dwKey == keylist.vkRight)))
+		KillTimer(GetForegroundWindow(), KEY_TIMER);
+	//if(m_GameState.GetButtons() == 0)
+	else
+	{
+	//TCHAR str1[80];
+	//wsprintf(str1, "%03i", m_GameState.GetButtons());
+	//MessageBox(NULL, str1, TEXT("Debug Info"), 0);
+
+	}*/
+	return S_OK;
+}

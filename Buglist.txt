@@ -1,0 +1,2 @@
+BugList:
+1. When Time reach 0, it keeps counting down.

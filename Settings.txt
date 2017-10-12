@@ -1,0 +1,45 @@
+Search file for [Chip's Challenge]
+
+Get Sound File names for:
+PickUpToolSound
+OpenDoorSound
+ChipDeathSound
+LevelCompleteSound
+SocketSound
+BlockedMoveSound
+ThiefSound
+SoundOnSound
+PickUpChipSound
+SwitchSound
+SplashSound
+BombSound
+TeleportSound
+TickSound
+ChipDeathByTimeSound
+
+Get Number of Midi Files
+For i = 0 to NumMidiFiles - 1
+	Get MidiFileX where X = i
+
+When Accessing a Level, Search for LevelX=P,T,S
+	Where 	X = Level Number
+		P = Password
+		T = Time Left
+		S = Best Score
+
+For Settings:
+	Sound=X
+	X=1		Sound is On
+	X=0		Sound is Off
+
+	Highest Level=X
+	X = Highest Level Completed
+
+	Current Level=X
+	X = Last Level Played
+
+	Current Score=X
+	X = Cumulative Score of all levels completed
+
+	Color=X
+	Ignore Color Setting
