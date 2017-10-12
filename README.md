@@ -47,17 +47,17 @@ Place the CHIPS.DAT file in the same directory as Chips.exe.  The DLLs can eithe
 
 If you yourself would like to create new level sets, then get a level editor such as ChipEdit or CCTools, if you haven't already. This Windows program will permit you to create new level sets of your own design. ChipEdit comes with excellent
 documentation, and you should have little trouble learning how to use it.
-<http://www.jkeweb.net/chipedit/>
-<http://cctools.translucentdragon.com/>
+* <http://www.jkeweb.net/chipedit/>
+* <http://cctools.translucentdragon.com/>
 
 ## License
 
-Copyright for [this repository][this_repo] is held by Melissa LeBlanc-Williams, 2003-2017.
-See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
+Copyright for [this repository][https://github.com/melissagirl/PocketChipsChallenge] is held by Melissa LeBlanc-Williams, 2003-2017.
+See the [LICENSE](LICENSE) file for license rights and limitations (MIT).
 
 ## Disclaimer
 
-This is an Alpha release, and Iceboxman Technologies and it's programmers are not responsible for anything that might or does happen as a result of downloading installing, or using this program. 
+This is an Alpha release, and the developers are not responsible for anything that might or does happen as a result of downloading installing, or using this program. 
 
 ## Credits
 
