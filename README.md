@@ -25,7 +25,7 @@ You can go to The Chip's challenge Page and scroll down to the "Getting the game
 <http://www.telusplanet.net/public/nfield/ChipChallenge/chip.htm>
 
 You can go to chips_challenge Yahoo Group and download additional level sets, which must be renamed to CHIPS.DAT.
-<http://groups.yahoo.com/group/chips_challenge/files/>
+<https://groups.yahoo.com/neo/groups/chips_challenge>
 
 There is one level set that deserves special mention. That is CCLP2.dat, or "Chip's Challenge Level Pack 2". This set
 was assembled by the fans, who voted on all of the user-created levels that existed at the time. The levels that were voted as being the most fun were then all put together to become CCLP2. It is the closest thing we have to a
@@ -40,19 +40,15 @@ The 4 files required to get the game working are:
 * GD104.dll
 * gx.dll
 
-You will need to have GAPI 1.2 installed to run the game, which can be obtained at <http://www.pocketpc.com>.
+You will need to have GAPI 1.2 installed to run the game, which can be obtained at <https://gapi.en.softonic.com/pocketpc>.
 Place the CHIPS.DAT file in the same directory as Chips.exe.  The DLLs can either be placed in the windows folder, or in the same folder as Chips.exe.
 
 ## Creating New Level Sets
 
-If you yourself would like to create new level sets, then get a copy of ChipEdit, if you haven't already. This Windows program will permit you to create new level sets of your own design. ChipEdit comes with excellent
+If you yourself would like to create new level sets, then get a level editor such as ChipEdit or CCTools, if you haven't already. This Windows program will permit you to create new level sets of your own design. ChipEdit comes with excellent
 documentation, and you should have little trouble learning how to use it.
-<http://jke.stage62.com/chipedit/chipedit.htm>
-
-## Comments
-
-If you would like to leave comments/suggestions or have a discussion, visit the Pocket Chip's Challenge Forum.
-<http://www.iceboxman.com/forums/viewforum.php?f=2>
+<http://www.jkeweb.net/chipedit/>
+<http://cctools.translucentdragon.com/>
 
 ## License
 
