@@ -52,7 +52,7 @@ documentation, and you should have little trouble learning how to use it.
 
 ## License
 
-Copyright for [this repository][https://github.com/melissagirl/PocketChipsChallenge] is held by Melissa LeBlanc-Williams, 2003-2017.
+Copyright for [this repository](https://github.com/melissagirl/PocketChipsChallenge) is held by Melissa LeBlanc-Williams, 2003-2017.
 See the [LICENSE](LICENSE) file for license rights and limitations (MIT).
 
 ## Disclaimer
@@ -62,7 +62,7 @@ This is an Alpha release, and the developers are not responsible for anything th
 ## Credits
 
 Pocket Chip's Challenge is heavily based on souce code available for Tile World.
-http://www.muppetlabs.com/~breadbox/software/tworld/
+<http://www.muppetlabs.com/~breadbox/software/tworld/>
 
 Most Graphic Operations are done using GapiDraw 1.04.
 <http://www.gapidraw.com>
