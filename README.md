@@ -1,7 +1,4 @@
-# Pocket Chip's Challenge
-
-Public Alpha
-By Melissa LeBlanc-Williams
+# Pocket Chip's Challenge Public Alpha
 
 Pocket Chip's Challenge is a freeware port of Microsoft's Chip's Challenge for the PocketPC. Now people can play a classic favorite wherever they go.  Chip's Challenge is a very addictive puzzle game featuring Chip in a maze of traps and monsters.
 
