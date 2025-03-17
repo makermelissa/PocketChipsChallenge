@@ -9,7 +9,7 @@ void CLevel::PushTile(POINT ptPos, CTile Tile)
 	Cell = GetCell(ptPos);
 
 	Cell->GetBottom()->SetID(Cell->GetTop()->GetID());
-	Cell->GetBottom()->SetState(Cell->GetBottom()->GetState());
+	Cell->GetBottom()->SetState(Cell->GetTop()->GetState());
 
 	Cell->GetTop()->SetID(Tile.GetID());
 	Cell->GetTop()->SetState(Tile.GetState());
@@ -195,7 +195,7 @@ BOOL CLevel::LoadLevelData()
 	}
 
 	/********** Map Detail (Bottom Level) **********/
-	
+
 	//Read Data Field Size
 	bRet = ReadFile(hFile, &nFieldSize, sizeof(WORD), &dwHeaderSize, NULL);
 	if ((bRet == FALSE) || (dwHeaderSize != sizeof(WORD)))
@@ -211,7 +211,7 @@ BOOL CLevel::LoadLevelData()
 		CloseHandle(hFile);
 		return FALSE;
 	}
-	
+
 	//Store RLE mapdata in uncompressed form
 	nCurPos = 0;
 	nCurByte = 0;

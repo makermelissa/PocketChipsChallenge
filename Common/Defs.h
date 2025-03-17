@@ -12,7 +12,7 @@
 #define	right(dir)	((((dir) << 3) | ((dir) >> 1)) & 15)
 
 //Filter Macros
-#define creatureid(id)		((id) & ~3) 
+#define creatureid(id)		((id) & ~3)
 #define	creaturedirid(id)	(idxdir((id) & 3))
 #define	crtile(id, dir)		((id) | diridx(dir))
 #define	diridx(dir)			((0x30210 >> ((dir) * 2)) & 3)

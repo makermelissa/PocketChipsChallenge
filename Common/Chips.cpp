@@ -465,7 +465,7 @@ HRESULT CChipsApp::ProcessNextFrame(CGapiSurface& backbuffer, DWORD dwFlags)
 	if(m_GameState.GetGameMode() == GM_TITLE)
 	{
 		//Draw Title Screen
-		::SetRect(&srcRect, 0, 0, 
+		::SetRect(&srcRect, 0, 0,
 			m_Title.GetWidth(), m_Title.GetHeight());
 		backbuffer.BltFast(0, 0, &m_Title, &srcRect,
 		0, NULL);
@@ -476,26 +476,25 @@ HRESULT CChipsApp::ProcessNextFrame(CGapiSurface& backbuffer, DWORD dwFlags)
 		(m_GameState.GetGameMode() == GM_LEVELWON) ||
 		(m_GameState.GetGameMode() == GM_PAUSED) ||
 		(m_GameState.GetGameMode() == GM_MENU) ||
-		(m_GameState.GetGameMode() == GM_PAUSED) ||
-		(m_GameState.GetGameMode() == GM_GAMEWON) ||
+Z		(m_GameState.GetGameMode() == GM_GAMEWON) ||
 		(m_GameState.GetGameMode() == GM_LEVELGOTO) ||
 		(m_GameState.GetGameMode() == GM_NEWGAME))
 	{
 
 		//Draw Background
-		::SetRect(&srcRect, 0, 0, 
+		::SetRect(&srcRect, 0, 0,
 			m_Background.GetWidth(), m_Background.GetHeight());
 		backbuffer.BltFast(0, 0, &m_Background, &srcRect,
 		0, NULL);
 
 		//Draw Tile Background
-		::SetRect(&srcRect, 0, 0, 
+		::SetRect(&srcRect, 0, 0,
 			m_TileBack.GetWidth(), m_TileBack.GetHeight());
 		backbuffer.BltFast(6, 4, &m_TileBack, &srcRect,
 		0, NULL);
 
 		//Draw Information Window
-		::SetRect(&srcRect, 0, 0, 
+		::SetRect(&srcRect, 0, 0,
 			m_InfoWnd.GetWidth(), m_InfoWnd.GetHeight());
 		backbuffer.BltFast(6, 234, &m_InfoWnd, &srcRect,
 		0, NULL);
@@ -514,7 +513,7 @@ HRESULT CChipsApp::ProcessNextFrame(CGapiSurface& backbuffer, DWORD dwFlags)
 			}
 			::SetRect(&srcRect, 0, 0 + nNumColor + nOffSet, 15, 23 + nNumColor + nOffSet);
 			::SetRect(&destRect, 30 + (i * 15), 262, 45 + (i * 15), 285);
-			backbuffer.Blt(&destRect, &m_Numbers, &srcRect, 0, NULL);	
+			backbuffer.Blt(&destRect, &m_Numbers, &srcRect, 0, NULL);
 		}
 
 		//Draw Time Left
@@ -535,7 +534,7 @@ HRESULT CChipsApp::ProcessNextFrame(CGapiSurface& backbuffer, DWORD dwFlags)
 			nCalcNum -= int(int(nCalcNum / pow(10,2-i)) * pow(10,2-i));
 			::SetRect(&srcRect, 0, 0 + nNumColor + nOffSet, 15, 23 + nNumColor + nOffSet);
 			::SetRect(&destRect, 85 + (i * 15), 262, 100 + (i * 15), 285);
-			backbuffer.Blt(&destRect, &m_Numbers, &srcRect, 0, NULL);	
+			backbuffer.Blt(&destRect, &m_Numbers, &srcRect, 0, NULL);
 		}
 
 		//Draw Chips Left
@@ -556,7 +555,7 @@ HRESULT CChipsApp::ProcessNextFrame(CGapiSurface& backbuffer, DWORD dwFlags)
 			}
 			::SetRect(&srcRect, 0, 0 + nNumColor + nOffSet, 15, 23 + nNumColor + nOffSet);
 			::SetRect(&destRect, 140 + (i * 15), 262, 155 + (i * 15), 285);
-			backbuffer.Blt(&destRect, &m_Numbers, &srcRect, 0, NULL);	
+			backbuffer.Blt(&destRect, &m_Numbers, &srcRect, 0, NULL);
 		}
 
 		//Draw Keys
@@ -565,12 +564,12 @@ HRESULT CChipsApp::ProcessNextFrame(CGapiSurface& backbuffer, DWORD dwFlags)
 			if(m_GameState.GetKey(j))
 			{
 				x = 144;
-				y = (((5 - j) % 4) + 4) * 24; 
+				y = (((5 - j) % 4) + 4) * 24;
 				::SetRect(&srcRect, x , y, x + 24, y + 24);
 				x = (j * 24) + 24;
 				y = 289;
 				::SetRect(&destRect, x , y, x + 24, y + 24);
-				backbuffer.Blt(&destRect, &m_Tiles, &srcRect, 0, NULL);	
+				backbuffer.Blt(&destRect, &m_Tiles, &srcRect, 0, NULL);
 			}
 		}
 
@@ -600,7 +599,7 @@ HRESULT CChipsApp::ProcessNextFrame(CGapiSurface& backbuffer, DWORD dwFlags)
 				x = (j * 24) + 120;
 				y = 289;
 				::SetRect(&destRect, x , y, x + 24, y + 24);
-				backbuffer.Blt(&destRect, &m_Tiles, &srcRect, 0, NULL);	
+				backbuffer.Blt(&destRect, &m_Tiles, &srcRect, 0, NULL);
 			}
 		}
 	}
@@ -609,7 +608,7 @@ HRESULT CChipsApp::ProcessNextFrame(CGapiSurface& backbuffer, DWORD dwFlags)
 		|| (m_GameState.GetGameMode() == GM_MENU)
 		|| (m_GameState.GetGameMode() == GM_NEWGAME))
 	{
-	
+
 		ptView = m_GameState.GetViewPort();
 		Tile.CreateSurface(GDCREATESURFACE_CLEAR, 24, 24);
 		for(ptTile.x=(ptView.x - 4); ptTile.x <= (ptView.x + 4); ptTile.x++)
@@ -621,7 +620,7 @@ HRESULT CChipsApp::ProcessNextFrame(CGapiSurface& backbuffer, DWORD dwFlags)
 				GetTile(ptTile, &Tile);
 				x = ((ptTile.x - (ptView.x - 4)) * 24) + 12;
 				y = ((ptTile.y - (ptView.y - 4)) * 24) + 10;
-				backbuffer.BltFast(x, y, &Tile, &srcRect, 0, NULL);	
+				backbuffer.BltFast(x, y, &Tile, &srcRect, 0, NULL);
 			}
 		}
 		//Draw Hint Text if necessary
@@ -757,7 +756,7 @@ HRESULT CChipsApp::CreateSurfaces(CGapiDisplay& display, HINSTANCE hInstance)
 
 	CJoJoSIP::GetSingleton().SetTransition( SIP_TRANSITION_FADE_IN_OPACITY |
                      SIP_TRANSITION_FADE_OUT_OPACITY |
-                     SIP_TRANSITION_FADE_IN_BOTTOM | 
+                     SIP_TRANSITION_FADE_IN_BOTTOM |
                      SIP_TRANSITION_FADE_OUT_BOTTOM, &kbTrans);
 	CJoJoSIP::GetSingleton().SetPosition(kbPos);
     return S_OK;
